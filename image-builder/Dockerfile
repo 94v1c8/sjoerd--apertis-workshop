@@ -37,4 +37,5 @@ RUN apt-get update  && \
                                                bmap-tools \
                                                rsync \
                                                openssh-client \
+                                               debootstrap \
                                                libnss-wrapper
