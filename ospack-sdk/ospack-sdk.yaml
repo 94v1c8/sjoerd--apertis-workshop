@@ -5,8 +5,6 @@ actions:
     suite: "17.06"
     components:
       - target
-      - development
-      - sdk
     mirror: https://repositories.apertis.org/apertis
     variant: minbase
 
@@ -21,12 +19,15 @@ actions:
     chroot: true
     command: echo apertis-sdk > /etc/hostname
 
+  - action: overlay
+    source: networkd
+
+  - action: overlay
+    source: sources
+
   - action: run
     chroot: true
     script: replace-tar-coreutils-for-build.sh
-
-  - action: overlay
-    source: networkd
 
   - action: apt
     packages: 
