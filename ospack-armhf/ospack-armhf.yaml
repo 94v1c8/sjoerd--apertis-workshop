@@ -1,0 +1,33 @@
+architecture: armhf
+
+actions:
+  - action: debootstrap
+    suite: "17.06"
+    components:
+      - target
+    mirror: https://repositories.apertis.org/apertis
+    variant: minbase
+
+  - action: apt
+    packages: [ sudo, openssh-server, adduser ]
+
+  - action: run
+    chroot: true
+    script: setup-user.sh
+
+  - action: run
+    chroot: true
+    command: echo apertis > /etc/hostname
+
+  - action: overlay
+    source: networkd
+
+  - action: run
+    chroot: true
+    script: setup-networking.sh
+
+  - action: pack
+    compression: gz
+    target: ospack-armhf.tar.gz
+
+

@@ -1,0 +1,37 @@
+architecture: armhf
+actions:
+  - action: unpack
+    source: ospack-armhf.tar.gz
+    compression: gz
+
+  - action: apt
+    recommends: false
+    packages:
+      - linux-image-4.9.0-0.bpo.2-armmp-unsigned
+      - u-boot-common
+
+  - action: setup-image
+    imagename: "apertis-armhf.img"
+    imagesize: 4G
+    partitiontype: gpt
+    mountpoints:
+      - mountpoint: /
+        partition: root
+        flags: [ boot ]
+    partitions:
+      - name: root
+        fs: ext4
+        start: 0%
+        end: 100%
+
+  - action: run
+    chroot: true
+    command: update-u-boot
+
+  - action: run
+    postprocess: true
+    command: bmaptool create apertis-armhf.img > apertis-armhf.img.bmap
+
+  - action: run
+    postprocess: true
+    command: gzip -f apertis-armhf.img
