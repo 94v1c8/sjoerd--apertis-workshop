@@ -36,6 +36,7 @@ RUN apt-get update  && \
                                                python3 \
                                                bmap-tools \
                                                rsync \
+                                               systemd-container \
                                                openssh-client \
                                                debootstrap \
                                                libnss-wrapper
