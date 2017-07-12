@@ -8,7 +8,9 @@ pipeline {
   }
   stages {
     stage("Build amd64 ospack") {
-      sh "yaib ospack-amd64.yaml"
+      steps {
+        sh "yaib ospack-amd64.yaml"
+      }
     }
   }
 }
