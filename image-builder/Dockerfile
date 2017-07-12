@@ -22,7 +22,7 @@ RUN apt-get update  && \
     apt-get install --no-install-recommends -y golang-go git ca-certificates
 
 # build yaib
-RUN go get github.com/sjoerdsimons/fakemachine && \
+RUN go get github.com/sjoerdsimons/yaib && \
     go get all && \
     go install github.com/sjoerdsimons/yaib
 
