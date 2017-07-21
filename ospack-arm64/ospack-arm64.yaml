@@ -28,6 +28,6 @@ actions:
 
   - action: "pack"
     compression: gz
-    target: ospack-arm64.tar.gz
+    file: ospack-arm64.tar.gz
 
 

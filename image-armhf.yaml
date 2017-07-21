@@ -1,7 +1,7 @@
 architecture: armhf
 actions:
   - action: unpack
-    source: ospack-armhf.tar.gz
+    file: ospack-armhf.tar.gz
     compression: gz
 
   - action: apt

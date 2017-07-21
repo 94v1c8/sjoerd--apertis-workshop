@@ -49,6 +49,6 @@ actions:
 
   - action: "pack"
     compression: gz
-    target: ospack-amd64.tar.gz
+    file: ospack-amd64.tar.gz
 
 

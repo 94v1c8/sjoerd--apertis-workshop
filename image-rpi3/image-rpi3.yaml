@@ -1,7 +1,7 @@
 architecture: arm64
 actions:
   - action: unpack
-    source: ospack-arm64.tar.gz
+    file: ospack-arm64.tar.gz
     compression: gz
 
   - action: apt

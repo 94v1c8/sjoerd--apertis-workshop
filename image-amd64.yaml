@@ -1,7 +1,7 @@
 architecture: amd64
 actions:
   - action: unpack
-    source: ospack-amd64.tar.gz
+    file: ospack-amd64.tar.gz
     compression: gz
 
   - action: apt

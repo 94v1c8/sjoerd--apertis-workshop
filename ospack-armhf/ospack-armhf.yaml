@@ -28,6 +28,6 @@ actions:
 
   - action: pack
     compression: gz
-    target: ospack-armhf.tar.gz
+    file: ospack-armhf.tar.gz
 
 
