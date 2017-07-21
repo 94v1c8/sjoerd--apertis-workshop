@@ -9,7 +9,7 @@ actions:
     variant: minbase
 
   - action: apt
-    packages: [ sudo, openssh-server, adduser ]
+    packages: [ procps, sudo, openssh-server, adduser ]
 
   - action: run
     chroot: true
