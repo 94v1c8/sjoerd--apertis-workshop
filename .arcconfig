@@ -1,0 +1,7 @@
+{
+  "phabricator.uri": "https://phabricator.apertis.org/",
+  "history.immutable": false,
+  "project": "Apertis Workshop",
+  "default-reviewers": "#reviewers",
+  "lint.engine": "ArcanistConfigurationDrivenLintEngine"
+}
