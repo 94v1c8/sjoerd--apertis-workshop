@@ -14,7 +14,7 @@ actions:
     command: echo console=ttyS0,115200 > /etc/kernel/cmdline
 
   - action: image-partition
-    imagename: "test.img"
+    imagename: "apertis-amd64.img"
     imagesize: 4G
     partitiontype: gpt
     mountpoints:
