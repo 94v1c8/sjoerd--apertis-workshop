@@ -10,7 +10,7 @@ actions:
       - linux-image-4.9.0-0.bpo.2-armmp-unsigned
       - u-boot-common
 
-  - action: setup-image
+  - action: image-partition
     imagename: "apertis-armhf.img"
     imagesize: 4G
     partitiontype: gpt
@@ -23,6 +23,9 @@ actions:
         fs: ext4
         start: 0%
         end: 100%
+
+  - action: filesystem-deploy
+    description: Deploying filesystem onto image
 
   - action: run
     chroot: true

@@ -17,7 +17,7 @@ actions:
     chroot: true
     command: echo console=ttyS0,115200 > /etc/kernel/cmdline
 
-  - action: setup-image
+  - action: image-partition
     imagename: "apertis-rpi3.img"
     imagesize: 4G
     partitiontype: msdos
@@ -37,6 +37,9 @@ actions:
         start: 32M
         end: 100%
         flags: [ boot ]
+
+  - action: filesystem-deploy
+    description: Deploying filesystem onto image
 
   - action: run
     chroot: true

@@ -13,7 +13,7 @@ actions:
     chroot: true
     command: echo console=ttyS0,115200 > /etc/kernel/cmdline
 
-  - action: setup-image
+  - action: image-partition
     imagename: "test.img"
     imagesize: 4G
     partitiontype: gpt
@@ -39,6 +39,9 @@ actions:
         fs: ext4
         start: 2G
         end:  100%
+
+  - action: filesystem-deploy
+    description: Deploying filesystem onto image
 
   - action: run
     chroot: true
