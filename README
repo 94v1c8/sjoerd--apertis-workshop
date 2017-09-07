@@ -1,0 +1,28 @@
+Apertis Workshop
+================
+
+This repository contains `debos` recipes to quickly generate custom images
+using Apertis.
+
+A sample AMD64 image can be generated with the commands below:
+
+ $ debos ospack-amd64/ospack-amd64.yaml
+ $ debos image-amd64.yaml
+
+The resulting `apertis-amd64.img` image can be booted up with QEMU:
+
+ $ qemu-system-x86_64 \
+    -m 2048 \
+    -enable-kvm \
+    -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/OVMF.fd \
+    -drive if=virtio,format=raw,cache=unsafe,file=apertis-amd64.img
+
+A generic ARM image can be generated with these commands:
+
+ $ debos ospack-armhf/ospack-armhf.yaml
+ $ debos image-armhf.yaml
+
+Use the command below to generate an image specific to the RPI3 using the
+ospack generated above:
+
+ $ debos image-rpi3/image-rpi3.yaml
