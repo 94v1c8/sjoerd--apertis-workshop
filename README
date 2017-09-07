@@ -26,3 +26,8 @@ Use the command below to generate an image specific to the RPI3 using the
 ospack generated above:
 
  $ debos image-rpi3/image-rpi3.yaml
+
+Licensing
+=========
+
+This repository is licensed under the MPLv2; see COPYING for more details.
